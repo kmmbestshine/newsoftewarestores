@@ -66,7 +66,7 @@
                                     </select>
                                 </td>
 
-                                <td>${{ $item->total() }}</td>
+                                <td>Rs.{{ $item->total() }}</td>
                             </tr>
                         @endforeach
 
@@ -87,15 +87,15 @@
                             </thead>
                             <tr>
                                 <td>Subtotal</td>
-                                <td>${{ Cart::subtotal() }}</td>
+                                <td>Rs.{{ Cart::subtotal() }}</td>
                             </tr>
                             <tr>
                                 <td>Tax</td>
-                                <td>${{ Cart::tax() }}</td>
+                                <td>Rs.{{ Cart::tax() }}</td>
                             </tr>
                             <tr>
                                 <th>Total</th>
-                                <th>${{ Cart::total() }}</th>
+                                <th>Rs.{{ Cart::total() }}</th>
                             </tr>
                         </table>
                     </div>

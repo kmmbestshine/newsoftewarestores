@@ -100,7 +100,7 @@
                         <td>
                             <strong>{{ $item->model->name }}</strong><br>
                             {{ $item->model->description }} <br>
-                            <span class="text-dark">${{ $item->total() }}</span>
+                            <span class="text-dark">Rs.{{ $item->total() }}</span>
                         </td>
                         <td>
                             <span class="badge badge-light">{{ $item->qty }}</span>
@@ -120,11 +120,11 @@
                     </tr>
                     <tr>
                         <td>Tax</td>
-                        <td>${{ Cart::tax() }}</td>
+                        <td>Rs.{{ Cart::tax() }}</td>
                     </tr>
                     <tr>
                         <th>Total</th>
-                        <th>${{ Cart::total() }}</th>
+                        <th>Rs.{{ Cart::total() }}</th>
                     </tr>
 
                 </table>
