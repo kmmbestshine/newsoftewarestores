@@ -13,9 +13,9 @@ class AdminUserSeeder extends Seeder
     public function run()
     {
         AdminUser::create([
-           'name' => 'jhon',
-            'email' => 'jhon@example.com',
-            'password' => '$2y$10$Gkoho102gT2niXU2EQhUNuMJ7LYC81WSS/TZzs0T6/VxoXxAiS7le',
+           'name' => 'KUMARAVEL',
+            'email' => 'info@bestshineeduapp.com',
+            'password' => '$2y$10$T/AO49e7BmIC9aUG/33mAOdy9yDm/SUGUZC5zU.3Gtj4Lvvf.27My',
         ]);
     }
 }
