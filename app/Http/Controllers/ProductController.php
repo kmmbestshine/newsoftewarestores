@@ -20,7 +20,7 @@ class ProductController extends Controller
     }
 
     public function store(Request $request) {
-$input = \Request::all();
+        $input = \Request::all();
         // Validate the form
         $request->validate([
            'name' => 'required',
@@ -45,13 +45,12 @@ $input = \Request::all();
             
         }
     /*Insert your data*/
-   // dd($input);
 
         Product::create([
             'name' => $request->name,
             'price' => $request->price,
-            'descript' => $request->descript,
             'description' => $request->description,
+            'descript' => $request->descript,
             'image' => $request->image->getClientOriginalName(),
             'mul_images' => implode("|",$images),
             'website' => $request->website,
