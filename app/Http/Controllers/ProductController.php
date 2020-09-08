@@ -45,14 +45,15 @@ class ProductController extends Controller
             
         }
     /*Insert your data*/
-
+    dd($request->name,$request->price,$request->description,$request->cov_descript,$request->image->getClientOriginalName(),
+        $request->image->getClientOriginalName(),$request->website,$request->youtube,$request->studentprice);
         Product::create([
             'name' => $request->name,
             'price' => $request->price,
             'description' => $request->description,
             'cov_descript' => $request->cov_descript,
             'image' => $request->image->getClientOriginalName(),
-            'mul_images' => implode("|",$images),
+            'mul_images' => $request->image->getClientOriginalName(),
             'website' => $request->website,
             'youtube' => $request->youtube,
             'studentprice' => $request->studentprice
