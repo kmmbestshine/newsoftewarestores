@@ -22,9 +22,11 @@
                 <img class="card-img-top" src="{{ url('/uploads') . '/' . $product->image }}" alt="">
                 <div class="card-body">
                     <h5 class="card-title">{{ $product->name }}</h5>
-                    <p class="card-text">
+                    {{--<p class="card-text">
                        {{ $product->description }}
-                    </p>
+
+                    </p>--}}
+                    <div class="content">{!! $product->description !!}</div>
                 </div>
                 <div class="card-footer">
                     <strong>Rs.{{ $product->price }}</strong> &nbsp;
