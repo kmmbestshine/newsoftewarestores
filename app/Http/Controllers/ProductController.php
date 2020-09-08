@@ -50,7 +50,7 @@ class ProductController extends Controller
             'name' => $request->name,
             'price' => $request->price,
             'description' => $request->description,
-            'descript' => $request->descript,
+            'cov_descript' => $request->cov_descript,
             'image' => $request->image->getClientOriginalName(),
             'mul_images' => implode("|",$images),
             'website' => $request->website,
