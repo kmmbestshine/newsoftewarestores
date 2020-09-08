@@ -37,6 +37,14 @@
                         Cart</button>
                     </form>
                 </div>
+                <div class="card-footer">
+                    <form action="{{ route('moredetails') }}" method="post">
+                        @csrf
+                        <input type="hidden" name="id" value="{{ $product->id }}">
+                    <button type="submit" class="btn btn-primary btn-outline-dark"><i class="fa fa-bars"></i>Click More Details</button>
+
+                    </form>
+                </div>
             </div>
         </div>
 

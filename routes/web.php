@@ -57,7 +57,8 @@ Route::post('/cart','Front\CartController@store')->name('cart');
 Route::patch('/cart/update/{product}','Front\CartController@update')->name('cart.update');
 Route::delete('/cart/remove/{product}','Front\CartController@destroy')->name('cart.destroy');
 Route::post('/cart/saveLater/{product}', 'Front\CartController@saveLater')->name('cart.saveLater');
-
+// more details
+Route::post('/moredetails','Front\HomeController@moredetails')->name('moredetails');
 
 // Save for later
 Route::delete('/saveLater/destroy/{product}','Front\SaveLaterController@destroy')->name('saveLater.destroy');

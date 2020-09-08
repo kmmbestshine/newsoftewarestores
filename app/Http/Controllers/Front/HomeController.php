@@ -14,4 +14,13 @@ class HomeController extends Controller
 
         return view('front.index', compact('products'));
     }
+    public function moredetails() {
+    	$input = \Request::all();
+        $products = Product::where('id', $input['id'])->get();
+        foreach ($products as $product) {
+            $mul_images=$product->mul_images;
+        }
+        $temp = explode('|',$mul_images );
+        return view('front.moredetails', compact('products','temp'));
+    }
 }
