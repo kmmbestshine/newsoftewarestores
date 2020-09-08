@@ -17,7 +17,7 @@
 
 
     @foreach ($products as $product)
-        <div class="col-lg-3 col-md-6 mb-4">
+        <div class="col-lg-4 col-md-6 mb-4">
             <div class="card">
                 <img class="card-img-top" src="{{ url('/uploads') . '/' . $product->image }}" alt="">
                 <div class="card-body">
