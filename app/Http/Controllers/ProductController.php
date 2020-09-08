@@ -20,7 +20,7 @@ class ProductController extends Controller
     }
 
     public function store(Request $request) {
-
+$input = \Request::all();
         // Validate the form
         $request->validate([
            'name' => 'required',
@@ -34,13 +34,27 @@ class ProductController extends Controller
             $image = $request->image;
             $image->move('uploads', $image->getClientOriginalName());
         }
+        // Upload the multible images
+        $images=array();
+        if ($files=$request->file('images')) {
+            foreach ($files as $file) {
+                $name=$file->getClientOriginalName();
+                $file->move('multipleuploads',$name);
+                $images[]=$name;
+            }
+            
+        }
+    /*Insert your data*/
 
-        // Save the data into database
         Product::create([
             'name' => $request->name,
             'price' => $request->price,
             'description' => $request->description,
-            'image' => $request->image->getClientOriginalName()
+            'image' => $request->image->getClientOriginalName(),
+            'mul_images' => implode("|",$images),
+            'website' => $request->website,
+            'youtube' => $request->youtube,
+            'studentprice' => $request->studentprice
 
         ]);
 
