@@ -26,7 +26,7 @@
                        {{ $product->description }}
 
                     </p>--}}
-                    <div class="content">{!! $product->description !!}</div>
+                    <div class="content">{!! $product->descript !!}</div>
                 </div>
                 <div class="card-footer">
                     <strong>Rs.{{ $product->price }}</strong> &nbsp;

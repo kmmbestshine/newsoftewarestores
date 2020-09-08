@@ -9,7 +9,11 @@
     {{ Form::text('price',$product->price,['class'=>'form-control border-input','placeholder'=>'Rs2500']) }}
     <span class="text-danger">{{ $errors->has('price') ? $errors->first('price') : '' }}</span>
 </div>
-
+<div class="form-group {{ $errors->has('description') ? 'has-error' : '' }}">
+    {{ Form::label('descript', 'Cover Description') }}
+    {{ Form::textarea('descript',$product->descript,['class'=>'form-control border-input','placeholder'=>'Enter Cover Description']) }}
+    <span class="text-danger">{{ $errors->has('description') ? $errors->first('description') : '' }}</span>
+</div>
 <div class="form-group {{ $errors->has('description') ? 'has-error' : '' }}">
     {{ Form::label('description', 'Description') }}
     {{ Form::textarea('description',$product->description,['class'=>'form-control border-input','placeholder'=>'Description','id'=>'mytextarea']) }}

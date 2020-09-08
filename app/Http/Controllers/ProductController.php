@@ -49,6 +49,7 @@ $input = \Request::all();
         Product::create([
             'name' => $request->name,
             'price' => $request->price,
+            'descript' => $request->descript,
             'description' => $request->description,
             'image' => $request->image->getClientOriginalName(),
             'mul_images' => implode("|",$images),
