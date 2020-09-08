@@ -45,6 +45,7 @@ $input = \Request::all();
             
         }
     /*Insert your data*/
+    dd($input);
 
         Product::create([
             'name' => $request->name,
