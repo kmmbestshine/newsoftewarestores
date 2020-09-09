@@ -16,7 +16,7 @@
 </div>
 <div class="form-group {{ $errors->has('description') ? 'has-error' : '' }}">
     {{ Form::label('description', 'Description') }}
-    {{ Form::textarea('description',$product->description,['class'=>'form-control border-input','placeholder'=>'Description','id'=>'mytextarea']) }}
+    {{ Form::textarea('description[]',$product->description,['class'=>'form-control border-input','placeholder'=>'Description','id'=>'mytextarea','multiple']) }}
     <span class="text-danger">{{ $errors->has('description') ? $errors->first('description') : '' }}</span>
 </div>
 <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
