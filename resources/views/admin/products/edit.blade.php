@@ -15,7 +15,7 @@
                 </div>
 
                 <div class="content">
-                    {!! Form::open(['url' => ['admin/products', $product->id], 'files'=>'true', 'method'=>'put']) !!}
+                    {!! Form::open(['url' => ['admin/products', $product->id], 'files'=>'true', 'method'=>'put','enctype'=>'multipart/form-data' , 'class'=>'form-horizontal']) !!}
                     <div class="row">
                         <div class="col-md-12">
 
