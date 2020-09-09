@@ -53,7 +53,7 @@ class ProductController extends Controller
             'description' => $request->description,
             'cov_descript' => $request->cov_descript,
             'image' => $request->image->getClientOriginalName(),
-            'mul_images' => $request->image->getClientOriginalName(),
+            'mul_images' => $request->file->getClientOriginalName(),
             'website' => $request->website,
             'youtube' => $request->youtube,
             'studentprice' => $request->studentprice
@@ -86,7 +86,7 @@ class ProductController extends Controller
             'description' => 'required',
         ]);
 
-        // Check if there is any image
+        // Check if there is any cover image
         if ($request->hasFile('image')) {
             // Check if the old image exists inside folder
             if (file_exists(public_path('uploads/') . $product->image)) {
@@ -99,13 +99,27 @@ class ProductController extends Controller
 
             $product->image = $request->image->getClientOriginalName();
         }
-
+        // Check if there is any multi image
+        $images=array();
+        if ($files=$request->file('images')) {
+            foreach ($files as $file) {
+                $name=$file->getClientOriginalName();
+                $file->move('multipleuploads',$name);
+                $images[]=$name;
+            }
+            
+        }
         // Updating the product
         $product->update([
            'name' => $request->name,
             'price' => $request->price,
             'description' => $request->description,
-            'image' => $product->image
+            'cov_descript' => $request->cov_descript,
+            'image' => $request->image->getClientOriginalName(),
+            'mul_images' => $request->file->getClientOriginalName(),
+            'website' => $request->website,
+            'youtube' => $request->youtube,
+            'studentprice' => $request->studentprice
         ]);
 
         // Store a message in session
